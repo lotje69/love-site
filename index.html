@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Love 💕</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(to bottom right, #ffe6e6, #fff0f5);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #5a2d0c;
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+    }
+
+    img {
+      border: 5px solid brown;
+      border-radius: 20px;
+      width: 300px;
+      margin: 20px 0;
+      box-shadow: 0 0 15px rgba(165, 42, 42, 0.5);
+    }
+
+    .heart {
+      font-size: 2em;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* floating hearts */
+    .sparkle {
+      position: absolute;
+      pointer-events: none;
+      animation: floatUp 1s forwards;
+      font-size: 20px;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-30px) scale(0.5); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hi my love 💕</h1>
+  <p>i can make websites now wiwiwiwiiwiw.  
+     This little site is just for you, because you’re my favorite human!!!!</p>
+  <img src="/Users/lotteloyens/Pictures/Photos Library.photoslibrary/resources/renders/1/1B992017-19D5-41A7-A94E-628E54E1544E_1_201_a.jpeg" alt="Us together">
+  <div class="heart">❤️</div>
+
+  <script>
+    const hearts = ["❤️","💖","💕","💞","💓"];
+
+    document.addEventListener("mousemove", (e) => {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      sparkle.style.left = e.pageX + "px";
+      sparkle.style.top = e.pageY + "px";
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => {
+        sparkle.remove();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
